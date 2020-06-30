@@ -11,6 +11,13 @@ Observations
       - This happens via line 45 in /web/src/modules/crate/Item.js
       - Hits /user/subscriptions route in /web/src/setup/routes/user.js
 
+  - /api/src/modules holds models for each tables in DB
+    - model.js --  defines fields & relationships
+    - mutations.js --  defines CRUD actions on model (controller?)
+    - query.js -- defines queries called by GraphQL (model methods?)
+    - resolvers.js -- works with mutations file to define logic around CRUD actions?  (controller?)
+    - types.js -- think this is just defining objects returned by GraphQL?
+
 List of Files to be Updated
   - /web/src/modules/crate/Item.js
       - Needs to check whether a user has filled out style-prefs & route to do that if they haven't
