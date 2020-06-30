@@ -1,0 +1,35 @@
+Observations
+  - Routes are hit at: code/web/src/setup/routes
+  - Routes redirect user to resource at: code/web/src/modules
+  - Current new subscription process:
+    - User clicks "crates" in Nav Bar. This hits route @ /web/src/setup/routes/crate.js
+    - Route directs to page @ /web/src/modules/crate/List.js
+    - Loading List.js pulls list of crates from api via /web/src/modules/crate/api/actions.js
+      - Specifically via the getList function ^^
+    - All CrateItem (from list above) are displayed with '+subscribe' link from /web/src/modules/crate/Item.js
+    - Clicking subscribe routes user to /web/src/modules/user/Subscriptions.js
+      - This happens via line 45 in /web/src/modules/crate/Item.js
+      - Hits /user/subscriptions route in /web/src/setup/routes/user.js
+
+List of Files to be Updated
+  - /web/src/modules/crate/Item.js
+      - Needs to check whether a user has filled out style-prefs & route to do that if they haven't
+  - /web/src/setup/routes/user.js
+      - Needs route to style-preferences
+  - /api/src/modules/user/model.js
+      - Needs updated if storing style preferences in user table (otherwise adding new model)
+
+List of Files to be Added
+  - /web/src/modules/user/style_preferences.js
+      - Needs to have links to series of categories (tops, bottoms, dresses, shoes, acccessories)
+      - Will need routes to individual pages for each category?
+  - /api/src/migrations
+      - Need migration to create table for storing stock images for style preference categories
+      - Need migration to store user preferences
+        - On user table? Or child table?
+  - /api/public/images/stock
+      - Need to store stock images for style preference categories??
+  - /api/src/modules/style-preferences
+      - Need model for storing preferences
+  - /api/src/modules/user/style-preferences ???
+      - Need model if storing user preferences on child table & not at user.
