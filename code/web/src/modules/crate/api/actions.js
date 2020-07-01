@@ -1,3 +1,7 @@
+/* code-annotations-areid:
+  Installs axios client which allows for using promises
+  Installs helper function for building Graph QL queries
+*/
 // Imports
 import axios from 'axios'
 import { query, mutation } from 'gql-query-builder'
@@ -14,7 +18,9 @@ export const CRATES_GET_RESPONSE = 'CRATES/GET_RESPONSE'
 export const CRATES_GET_FAILURE = 'CRATES/GET_FAILURE'
 
 // Actions
-
+/* code-annotations-areid:
+  GraphQL queries to handle successful & failed responses
+*/
 // Get list of crates
 export function getList(orderBy = 'DESC', isLoading = true) {
   return dispatch => {

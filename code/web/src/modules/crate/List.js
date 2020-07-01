@@ -1,3 +1,6 @@
+/* code-annotations-areid:
+  Pulls various FE elements for use in displaying list of crates
+*/
 // Imports
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
@@ -15,9 +18,15 @@ import Loading from '../common/Loading'
 import EmptyMessage from '../common/EmptyMessage'
 import CrateItem from './Item'
 
+/* code-annotations-areid:
+  Creates List object
+*/
 // Component
 class List extends PureComponent {
 
+  /* code-annotations-areid:
+    Obtains data for each create
+  */
   // Runs on server only for SSR
   static fetchData({ store }) {
     return store.dispatch(getCratesList('ASC'))
@@ -28,6 +37,9 @@ class List extends PureComponent {
     this.props.getCratesList('ASC')
   }
 
+  /* code-annotations-areid:
+    'View' of crates list
+  */
   render() {
     return (
       <div>
@@ -80,4 +92,7 @@ function listState(state) {
   }
 }
 
+/* code-annotations-areid:
+  Makes list state available when calling this object (?)
+*/
 export default connect(listState, { getCratesList })(List)
