@@ -1,3 +1,10 @@
+/* code-annotations-areid:
+  Loads path which is used for working with files & directory paths
+  Loads multer which is used for multipart/form data
+
+  Code below basically determining where to store uploaded files, how to name those files,
+  and how to handle errors in file uploads
+*/
 // Imports
 import path from 'path'
 import multer from 'multer'
