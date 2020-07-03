@@ -1,3 +1,9 @@
+/* code-annotations-areid:
+  Defines mutations to GraphQL endpoints
+  Mutations are either create, update, or delete (Read handled by query)
+  Mutations must be for fields contained in one of the 4 defined tables
+*/
+
 // Imports
 import { GraphQLObjectType } from 'graphql'
 

@@ -1,3 +1,8 @@
+/* code-annotations-areid:
+  Defines queries to GraphQL endpoints
+  Queries are read-only & must be for fields contained in one of the 4 defined tables
+*/
+
 // Imports
 import { GraphQLObjectType } from 'graphql'
 

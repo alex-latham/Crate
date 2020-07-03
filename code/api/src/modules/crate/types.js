@@ -1,6 +1,12 @@
+/* code-annotations-areid:
+  Imports GraphQL data types to be used
+*/
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
+/* code-annotations-areid:
+  Defines crate object & data types of field return values
+*/
 // Crate type
 const CrateType = new GraphQLObjectType({
   name: 'crate',

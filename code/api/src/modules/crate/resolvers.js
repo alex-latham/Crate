@@ -2,6 +2,12 @@
 import models from '../../setup/models'
 import params from '../../config/params'
 
+/* code-annotations-areid:
+  Contains all logic for returning objects including:
+    - Error checking for invalid requests
+    - Role & permission validation for restricted resources
+*/
+
 // Get crate by ID
 export async function getById(parentValue, { crateId }) {
   const crate = await models.Crate.findOne({ where: { id: crateId } })

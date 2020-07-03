@@ -14,7 +14,7 @@ export default function (server) {
   console.info('SETUP - GraphQL...')
 
   /* code-annotations-areid:
-    Uses JSON wweb token auth as defined elsewhere
+    Uses JSON web token auth as defined elsewhere
   */
   server.use(authentication)
 
