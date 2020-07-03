@@ -1,3 +1,6 @@
+/* code-annotations-areid:
+  Configures authentication via json web token module
+*/
 // Imports
 import jwt from 'jsonwebtoken'
 import serverConfig from '../config/server.json'

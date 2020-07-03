@@ -1,3 +1,6 @@
+/* code-annotations-areid:
+  Sets up GraphQL to function as the server & provide API endpoints for this app
+*/
 // Imports
 import graphqlHTTP from 'express-graphql'
 
@@ -10,6 +13,9 @@ import schema from './schema'
 export default function (server) {
   console.info('SETUP - GraphQL...')
 
+  /* code-annotations-areid:
+    Uses JSON wweb token auth as defined elsewhere
+  */
   server.use(authentication)
 
   // API (GraphQL on route `/`)

@@ -1,3 +1,6 @@
+/* code-annotations-areid:
+  Actually starts server (or handles error if it fails)
+*/
 // App Imports
 import { PORT, NODE_ENV } from '../config/env'
 
