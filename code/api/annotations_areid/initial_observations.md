@@ -1,4 +1,4 @@
-Observations
+### Observations
   - Routes are hit at: code/web/src/setup/routes
   - Routes redirect user to resource at: code/web/src/modules
   - Current new subscription process:
@@ -18,7 +18,7 @@ Observations
     - resolvers.js -- works with mutations file to define logic around CRUD actions?  (controller?)
     - types.js -- think this is just defining objects returned by GraphQL?
 
-List of Files to be Updated
+### List of Files to be Updated
   - /web/src/modules/crate/Item.js
       - Needs to check whether a user has filled out style-prefs & route to do that if they haven't
   - /web/src/setup/routes/user.js
@@ -26,7 +26,7 @@ List of Files to be Updated
   - /api/src/modules/user/model.js
       - Needs updated if storing style preferences in user table (otherwise adding new model)
 
-List of Files to be Added
+### List of Files to be Added
   - /web/src/modules/user/style_preferences.js
       - Needs to have links to series of categories (tops, bottoms, dresses, shoes, acccessories)
       - Will need routes to individual pages for each category?
