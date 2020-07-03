@@ -1,3 +1,6 @@
+/* code-annotations-areid:
+  dotenv loads & configures environment variables
+*/
 // Imports
 import dotenv from 'dotenv'
 
