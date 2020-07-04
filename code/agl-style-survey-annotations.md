@@ -25,5 +25,5 @@
     * Add style survey images here
 
 ## Notes:
-* Where will the styleSummarizer live?
+* Will the styleSummarizer live in modules/user/resolvers.js?
 * Alternative to storing a single string for summary (e.g., "Classy but trashy"), we could store two fields like primaryStyle: "classy", secondaryStyle: "trashy".
