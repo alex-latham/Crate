@@ -1,3 +1,7 @@
+/* alatham-annotation
+This file defines ways the User model may be updated
+*/
+
 // Imports
 import { GraphQLString, GraphQLInt } from 'graphql'
 
@@ -40,7 +44,10 @@ export const userRemove = {
   resolve: remove
 }
 
-// Place mutation to update User model for styleSummary here
+/* alatham-annotation
+Place mutation to update User model for styleSummary here
+*/
+
 // Add Style
 // export const userStyle = {
   // type: UserType,

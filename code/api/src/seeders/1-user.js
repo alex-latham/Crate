@@ -4,7 +4,9 @@ const bcrypt = require('bcrypt');
 const config = require('../config/server.json');
 const params = require('../config/params.json');
 
-// may need to add styleSummary: null for user seeds
+/* alatham-annotation
+  may need to add styleSummary: null for user seeds
+*/
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('users', [

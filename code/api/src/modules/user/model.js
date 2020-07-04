@@ -1,7 +1,10 @@
+/* alatham-annotation
+This file defines field names, data types, and relationships of the User model
+*/
+
 'use strict'
 
 // User
-// This file defines field names, data types, and relationships of the User model
 module.exports = function(sequelize, DataTypes) {
   let User = sequelize.define('users', {
     name: {
@@ -16,7 +19,9 @@ module.exports = function(sequelize, DataTypes) {
     role: {
       type: DataTypes.TEXT
     }
-    // likely to add a column here: styleSummary, type: DataTypes.TEXT
+    /* alatham-annotation
+     likely to add a column here: styleSummary, type: DataTypes.TEXT
+    */
   })
 
   User.associate = function(models) {

@@ -1,3 +1,8 @@
+/* alatham-annotation
+  This file defines the GraphQL types for User model fields
+*/
+
+
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
@@ -14,8 +19,10 @@ const UserType = new GraphQLObjectType({
     role: { type: GraphQLString },
     createdAt: { type: GraphQLString },
     updatedAt: { type: GraphQLString }
-    // Update User type to include styleSummary
-    // styleSummary: { type: GraphQLString }
+    /* alatham-annotation
+      Update User type to include styleSummary
+      styleSummary: { type: GraphQLString }
+    */
   })
 })
 

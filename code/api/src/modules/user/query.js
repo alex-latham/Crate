@@ -1,3 +1,9 @@
+/* alatham-annotation
+This file defines the various ways the User model can be queried for info
+(READ-ONLY type queries)
+*/
+
+
 // Imports
 import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 
@@ -48,5 +54,8 @@ export const userGenders = {
   resolve: getGenders
 }
 
-// styleSummaryExists
-// used to query whether a user currently has a styleSummary on record
+/* alatham-annotation
+  styleSummaryExists
+  used to query whether a user currently has a styleSummary on record
+  should return boolean
+*/
