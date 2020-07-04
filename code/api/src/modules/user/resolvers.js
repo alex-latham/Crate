@@ -77,3 +77,7 @@ export async function remove(parentValue, { id }) {
 export async function getGenders() {
   return Object.values(params.user.gender)
 }
+
+// Update user
+// Add async resolver function here to update User model with styleSummary
+// example in crate/resolvers

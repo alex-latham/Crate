@@ -47,3 +47,6 @@ export const userGenders = {
   type: new GraphQLList(UserGenderType),
   resolve: getGenders
 }
+
+// styleSummaryExists
+// used to query whether a user currently has a styleSummary on record
