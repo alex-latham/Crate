@@ -3,7 +3,6 @@ This file defines the various ways the User model can be queried for info
 (READ-ONLY type queries)
 */
 
-
 // Imports
 import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 

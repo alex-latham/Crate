@@ -1,3 +1,8 @@
+/* alatham-annotation
+  This file is responsible for logic and functions which
+  define the circumstances under which and how the database is modified
+*/
+
 // Imports
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'

@@ -24,6 +24,9 @@ module.exports = function(sequelize, DataTypes) {
     */
   })
 
+  /* alatham-annotation
+    define relationships to other models here
+  */
   User.associate = function(models) {
     User.hasMany(models.Subscription)
   }
