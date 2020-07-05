@@ -18,6 +18,10 @@ import { messageShow, messageHide } from '../common/api/actions'
 import { create } from '../subscription/api/actions'
 
 // Component
+// Will need to add functionailty that fire when the button on the crate is clicked for subscription. This will lead us to the style prefrences page.
+/// once the style prefrences page is submited we will then be redirected to a confirmation page.
+
+
 class Item extends PureComponent {
 
   constructor(props) {
@@ -62,6 +66,7 @@ class Item extends PureComponent {
   render() {
     const { id, name, description } = this.props.crate
     const { isLoading } = this.state
+    console.log({id, name, description})
 
     return (
       <Card style={{ width: '18em', backgroundColor: white }}>
@@ -76,6 +81,7 @@ class Item extends PureComponent {
 
           <p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
             <Button
+              id={id}
               theme="primary"
               onClick={this.onClickSubscribe.bind(this, id)}
               type="button"

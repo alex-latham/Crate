@@ -11,6 +11,8 @@ import * as subscription from '../modules/subscription/api/state'
 import * as crate from '../modules/crate/api/state'
 
 // App Reducer
+
+/// if we have to make any changes to the reducers it may have to be in the user reducer and or the product file as well.
 const appReducer = combineReducers({
   common,
   user,

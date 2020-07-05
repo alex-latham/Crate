@@ -18,6 +18,8 @@ import SubscriptionItem from '../subscription/Item'
 // Component
 class Subscriptions extends PureComponent {
 
+  // will need to add to the user file. We want the ability to look at the users style prefrences
+
   // Runs on server only for SSR
   static fetchData({ store }) {
     return store.dispatch(getListByUser())
