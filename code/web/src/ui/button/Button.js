@@ -8,7 +8,9 @@ import { primary as primaryGradient, secondary as secondaryGradient } from '../c
 import { level1, level2, level3, level4 } from '../common/shadows'
 
 // Component
+// looks to be a dynamic button used throughout the code 
 const Button = (props) => {
+  // console.log(props)
   const { children, type, disabled, theme, ...other } = props
 
   return (
