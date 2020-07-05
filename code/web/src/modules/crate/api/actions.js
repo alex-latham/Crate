@@ -15,6 +15,9 @@ export const CRATES_GET_FAILURE = 'CRATES/GET_FAILURE'
 
 // Actions
 
+/// Create action for fetching and posting to the back end api
+/// Create actions for error handling of the style prefrences
+
 // Get list of crates
 export function getList(orderBy = 'DESC', isLoading = true) {
   return dispatch => {
