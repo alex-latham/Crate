@@ -1,3 +1,5 @@
+// Quinn
+
 // Imports
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -11,6 +13,8 @@ import { level1, level2, level3, level4 } from '../common/shadows'
 const Button = (props) => {
   const { children, type, disabled, theme, ...other } = props
 
+  // Add a ( button-id ) to each button for clothes, shoes, accessories
+  // Add ( id ) based off of props
   return (
     <button type={type} disabled={disabled} {...other}>
       {children}

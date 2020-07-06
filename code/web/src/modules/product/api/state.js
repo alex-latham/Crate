@@ -1,3 +1,5 @@
+// Quinn
+
 // Imports
 
 // App Imports
@@ -107,7 +109,7 @@ const productsRelatedInitialState = {
   productId: 0
 }
 
-// State
+
 export const productsRelated = (state = productsRelatedInitialState, action) => {
   switch (action.type) {
     case PRODUCTS_GET_RELATED_LIST_REQUEST:

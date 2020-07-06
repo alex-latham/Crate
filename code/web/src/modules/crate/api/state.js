@@ -1,3 +1,7 @@
+// Quinn
+// This is an example of "Reducers" used for Redux
+// Create a file like this for the component that will be created for /style-preferences
+
 // Imports
 
 // App Imports

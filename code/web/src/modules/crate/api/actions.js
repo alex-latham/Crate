@@ -1,3 +1,8 @@
+// Quinn
+// This is an example of "actions" used for Redux\
+// Create a file like this for the component that will be created for /style-preferences
+// This is where we will dispatch()
+
 // Imports
 import axios from 'axios'
 import { query, mutation } from 'gql-query-builder'

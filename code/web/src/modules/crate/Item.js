@@ -1,3 +1,5 @@
+// Quinn
+
 // Imports
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
@@ -75,6 +77,10 @@ class Item extends PureComponent {
           <p style={{ color: grey2, marginTop: '1em' }}>{description}</p>
 
           <p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+            {/* Add a method to this button that checks the id of buttons
+                  example - if button-id is 1 then display TOPS & BOTTOMS
+                Change this button to a Link or Reroute for /style-preference
+                  */}
             <Button
               theme="primary"
               onClick={this.onClickSubscribe.bind(this, id)}

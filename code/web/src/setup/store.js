@@ -1,3 +1,9 @@
+// Quinn
+// npm i redux-devtools-extension -s
+// import { composeWithDevTools } from 'redux-devtools-extension'
+
+// THIS IS THE STORE FOR REACT-REDUX
+
 // Imports
 import { compose, combineReducers } from 'redux'
 import { createStore, applyMiddleware } from 'redux'
@@ -38,6 +44,8 @@ if (typeof window !== 'undefined') {
 // Store
 export const store = createStore(
   rootReducer,
+  // un-comment this line in whe lines 1 and 2 have been installed
+  // devTools,
   initialState,
 
   compose(
