@@ -1,5 +1,5 @@
-/* alatham-annotation
-This file defines ways the User model may be updated
+/* frondina-annotation
+defines how we can change a user
 */
 
 // Imports
@@ -44,18 +44,6 @@ export const userRemove = {
   resolve: remove
 }
 
-/* alatham-annotation
-Place mutation to update User model for styleSummary here
+/* frondina-annotation
+This is where the mutation to add the new column will go
 */
-
-// Add Style
-// export const userStyle = {
-  // type: UserType,
-  // args: {
-    // styleSummary: {
-      // name: 'styleSummary',
-      // type: GraphQLString
-    // }
-  // },
-  // resolve: update
-// }

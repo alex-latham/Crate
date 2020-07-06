@@ -1,6 +1,6 @@
-/* alatham-annotation
-This file defines the various ways the User model can be queried for info
-(READ-ONLY type queries)
+/* frondina-annotation
+This is where our definitions for possible user queries goes
+will add a query for checking a useres stylesummary value
 */
 
 // Imports
@@ -53,8 +53,7 @@ export const userGenders = {
   resolve: getGenders
 }
 
-/* alatham-annotation
+/* frondina-annotation
   styleSummaryExists
-  used to query whether a user currently has a styleSummary on record
-  should return boolean
+  return boolean of if stylesummary != 0
 */

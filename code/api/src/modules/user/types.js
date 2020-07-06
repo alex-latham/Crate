@@ -1,4 +1,4 @@
-/* alatham-annotation
+/* frondina-annotation
   This file defines the GraphQL types for User model fields
 */
 
@@ -19,9 +19,8 @@ const UserType = new GraphQLObjectType({
     role: { type: GraphQLString },
     createdAt: { type: GraphQLString },
     updatedAt: { type: GraphQLString }
-    /* alatham-annotation
-      Update User type to include styleSummary
-      styleSummary: { type: GraphQLString }
+    /* frondina-annotation
+      this is where the new column of style summary will go
     */
   })
 })

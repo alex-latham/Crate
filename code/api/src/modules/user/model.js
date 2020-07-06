@@ -1,5 +1,5 @@
-/* alatham-annotation
-This file defines field names, data types, and relationships of the User model
+/* frondina-annotation
+this is the model for the user
 */
 
 'use strict'
@@ -19,14 +19,11 @@ module.exports = function(sequelize, DataTypes) {
     role: {
       type: DataTypes.TEXT
     }
-    /* alatham-annotation
-     likely to add a column here: styleSummary, type: DataTypes.TEXT
+    /* frondina-annotation
+     add style column here
     */
   })
 
-  /* alatham-annotation
-    define relationships to other models here
-  */
   User.associate = function(models) {
     User.hasMany(models.Subscription)
   }

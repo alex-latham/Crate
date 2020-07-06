@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 const config = require('../config/server.json');
 const params = require('../config/params.json');
 
-/* alatham-annotation
-  may need to add styleSummary: null for user seeds
+/* frondina-annotation
+  if we do not give style summary a default value of zero we may need to update these seeds
 */
 module.exports = {
   up: (queryInterface, Sequelize) => {

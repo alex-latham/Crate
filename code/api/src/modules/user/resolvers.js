@@ -1,6 +1,6 @@
-/* alatham-annotation
-  This file is responsible for logic and functions which
-  define the circumstances under which and how the database is modified
+/* frondina-annotation
+  TA resolver is a function that resolves a value for a type or field in a schema.
+  Resolvers can return objects or scalars like Strings, Numbers, Booleans,
 */
 
 // Imports
@@ -83,8 +83,7 @@ export async function getGenders() {
   return Object.values(params.user.gender)
 }
 
-/* alatham-annotation
+/* frondina-annotation
   Update user
-  Add async resolver function here to update User model with styleSummary
-  example in crate/resolvers
+  Addfunction here to update User model with styleSummary
 */
