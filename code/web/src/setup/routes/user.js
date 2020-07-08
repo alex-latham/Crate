@@ -3,11 +3,12 @@ import Login from '../../modules/user/Login'
 import Signup from '../../modules/user/Signup'
 import Profile from '../../modules/user/Profile'
 import Subscriptions from '../../modules/user/Subscriptions'
-import StylePrefrences from '../../modules/user/StylePrefrences'
+import StylePreferences from '../../modules/stylePreferences/StylePreferences'
 
 
 
-// Will need to add a new user route for the user/style-prefrences page
+
+// Will need to add a new user route for the user/style-prevsdmvdskmkadsfkadffrences page
 // will need to add a new user route for the user/style-prefrences/confirmation page
 
 // User routes
@@ -28,14 +29,15 @@ export default {
     auth: true
   },
 
+  // subscriptions: {
+  //   path: '/user/subscriptions',
+  //   component: Subscriptions,
+  //   auth: true
+  // }
+
   subscriptions: {
-    path: '/user/subscriptions',
-    component: Subscriptions,
-    auth: true
-  },
-  stylePrefrences: {
-    path: '/user/style-prefrences',
-    component: StylePrefrences,
+    path: '/user/style-preferences',
+    component: StylePreferences,
     auth: true
   }
 }
