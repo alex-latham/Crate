@@ -14,6 +14,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     role: {
       type: DataTypes.TEXT
+    },
+    styleSummary: {
+      type: DataTypes.TEXT
     }
   })
 
