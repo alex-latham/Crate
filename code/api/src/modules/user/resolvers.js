@@ -77,3 +77,8 @@ export async function remove(parentValue, { id }) {
 export async function getGenders() {
   return Object.values(params.user.gender)
 }
+
+// User Has Summary
+export async function hasSummary(parentValue, { id }) {
+  return await models.User.findOne({ where: { id } })
+}

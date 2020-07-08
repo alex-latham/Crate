@@ -1,5 +1,5 @@
 // Imports
-import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
+import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLBoolean } from 'graphql'
 
 // User type
 const UserType = new GraphQLObjectType({
@@ -40,4 +40,14 @@ const UserGenderType = new GraphQLObjectType({
   })
 })
 
-export { UserType, UserLoginType, UserGenderType }
+// Has Summary Type
+const UserHasSummary = new GraphQLObjectType({
+  name: 'userHasSummary',
+  description: 'User Summary Type',
+
+  fields: () => ({
+    styleSummary: { type: GraphQLString },
+  })
+})
+
+export { UserType, UserLoginType, UserGenderType, UserHasSummary }
