@@ -1,8 +1,8 @@
 // Imports
-import { GraphQLString, GraphQLInt, GraphQLList } from 'graphql'
+import { GraphQLString, GraphQLInt, GraphQLList, GraphQLInputObjectType } from 'graphql'
 
 // App Imports
-import { UserType } from './types'
+import { UserType, UserStyleFormDataType } from './types'
 import { create, remove, updateStyleSummary } from './resolvers'
 
 // Create
@@ -49,7 +49,7 @@ export const userStyleSummaryUpdate = {
     },
     formData: {
       name: 'formData',
-      type: new GraphQLList(GraphQLString)
+      type: UserStyleFormDataType
     }
   },
   resolve: updateStyleSummary

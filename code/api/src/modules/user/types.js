@@ -1,5 +1,5 @@
 // Imports
-import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
+import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLInputObjectType } from 'graphql'
 
 // User type
 const UserType = new GraphQLObjectType({
@@ -41,13 +41,36 @@ const UserGenderType = new GraphQLObjectType({
 })
 
 // Has Summary Type
-const UserStyleSummaryType = new GraphQLObjectType({
-  name: 'userStyleSummary',
-  description: 'User styleSummary Type',
+// const UserStyleSummaryType = new GraphQLObjectType({
+//   name: 'userStyleSummary',
+//   description: 'User styleSummary Type',
+//
+//   fields: () => ({
+//     styleSummary: { type: GraphQLString },
+//   })
+// })
 
+// style form data type
+const UserStyleFormDataType = new GraphQLInputObjectType({
+  name: 'styleFormData',
+  description: 'style form data',
   fields: () => ({
-    styleSummary: { type: GraphQLString },
-  })
-})
+      tops: {
+          type: GraphQLString,
+      },
+      pants: {
+          type: GraphQLString,
+      },
+      dresses: {
+          type: GraphQLString,
+      },
+      shoes: {
+          type: GraphQLString,
+      },
+      accessories: {
+          type: GraphQLString,
+      }
+  }),
+});
 
-export { UserType, UserLoginType, UserGenderType, UserStyleSummaryType }
+export { UserType, UserLoginType, UserGenderType, UserStyleFormDataType }
