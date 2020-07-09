@@ -49,13 +49,13 @@ export const userGenders = {
 }
 
 // HasStyleSummary
-export const userStyleSummary = {
-  type: UserStyleSummaryType,
-  args: {
-    id: {
-      name: 'id',
-      type: GraphQLInt
-    }
-  },
-  resolve: getStyleSummary
-}
+// export const userStyleSummary = {
+//   type: UserStyleSummaryType,
+//   args: {
+//     id: {
+//       name: 'id',
+//       type: GraphQLInt
+//     }
+//   },
+//   resolve: getStyleSummary
+// }
