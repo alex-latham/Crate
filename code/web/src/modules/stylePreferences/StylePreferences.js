@@ -29,9 +29,28 @@ class StylePreferences extends Component {
     }
 
     updateTops = (event) => {
-        console.log(event.target.id)
         const targetEvent = event.target.id;
         this.setState({tops: targetEvent})
+    }
+
+    updatePants = (event) => {
+        const targetEvent = event.target.id;
+        this.setState({pants: targetEvent})
+    }
+
+    updateDresses = (event) => {
+        const targetEvent = event.target.id;
+        this.setState({dresses: targetEvent})
+    }
+
+    updateShoes = (event) => {
+        const targetEvent = event.target.id;
+        this.setState({shoes: targetEvent})
+    }
+
+    updateAccessories = (event) => {
+        const targetEvent = event.target.id;
+        this.setState({accessories: targetEvent})
     }
 
     render() {
@@ -39,7 +58,7 @@ class StylePreferences extends Component {
 
     return (
         <section>
-            <p>Shirts</p>
+            <p>Tops</p>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em'}}>
                 <button id='punk'
                 onClick={this.updateTops}
@@ -57,51 +76,75 @@ class StylePreferences extends Component {
                     Comfy
                 </button>
             </div>
-            <p>Pants</p>
+            <p>Bottoms</p>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-            <button type='punk'>
+                <button id='punk'
+                onClick={this.updatePants}
+                >
                     Punk
                 </button>
-                <button type='preppy'>
+                <button id='preppy'
+                onClick={this.updatePants}                
+                >
                     Preppy
                 </button>
-                <button type='comfy'>
+                <button id='comfy'
+                onClick={this.updatePants}
+                >
                     Comfy
                 </button>
             </div>
             <p>Dresses</p>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-            <button type='punk'>
+                <button id='punk'
+                onClick={this.updateDresses}
+                >
                     Punk
                 </button>
-                <button type='preppy'>
+                <button id='preppy'
+                onClick={this.updateDresses}                
+                >
                     Preppy
                 </button>
-                <button type='comfy'>
+                <button id='comfy'
+                onClick={this.updateDresses}
+                >
                     Comfy
                 </button>
             </div>
             <p>Shoes</p>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-            <button type='punk'>
+                <button id='punk'
+                onClick={this.updateShoes}
+                >
                     Punk
                 </button>
-                <button type='preppy'>
+                <button id='preppy'
+                onClick={this.updateShoes}                
+                >
                     Preppy
                 </button>
-                <button type='comfy'>
+                <button id='comfy'
+                onClick={this.updateShoes}
+                >
                     Comfy
                 </button>
             </div>
             <p>Accessories</p>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-            <button type='punk'>
+                <button id='punk'
+                onClick={this.updateAccessories}
+                >
                     Punk
                 </button>
-                <button type='preppy'>
+                <button id='preppy'
+                onClick={this.updateAccessories}                
+                >
                     Preppy
                 </button>
-                <button type='comfy'>
+                <button id='comfy'
+                onClick={this.updateTAccessories}
+                >
                     Comfy
                 </button>
             </div>
