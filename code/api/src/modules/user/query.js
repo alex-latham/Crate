@@ -1,9 +1,9 @@
 // Imports
-import { GraphQLInt, GraphQLString, GraphQLList, GraphQLBoolean } from 'graphql'
+import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 
 // App Imports
-import { UserType, UserLoginType, UserGenderType, UserHasSummary } from './types'
-import { getAll, getById, login, getGenders, hasSummary } from './resolvers'
+import { UserType, UserLoginType, UserGenderType, UserStyleSummaryType } from './types'
+import { getAll, getById, login, getGenders, getStyleSummary } from './resolvers'
 
 // All
 export const users = {
@@ -49,10 +49,13 @@ export const userGenders = {
 }
 
 // HasStyleSummary
-export const userHasSummary = {
-  type: UserHasSummary,
+export const userStyleSummary = {
+  type: UserStyleSummaryType,
   args: {
-    id: { type: GraphQLInt }
+    id: {
+      name: 'id',
+      type: GraphQLInt
+    }
   },
-  resolve: hasSummary
+  resolve: getStyleSummary
 }

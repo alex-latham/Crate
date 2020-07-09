@@ -17,10 +17,6 @@ describe("user queries", () => {
     );
   });
 
-  it("is true", () => {
-    expect(true).toBe(true)
-  })
-
   it("returns all users", async () => {
     const response = await request(server)
       .get('/')
@@ -62,13 +58,14 @@ describe("user queries", () => {
       expect(response.body.data.userGenders[1].name).toEqual('Female')
   })
 
-  it ("gets style summary for a summary", async() => {
+// realized this query repeated an existing one for user
+  it ("gets style summary for a user", async() => {
     const response = await request(server)
       .get('/')
-      .send({query: '{ userHasSummary(id:1) { styleSummary } }'})
+      .send({query: '{ user(id:1) { styleSummary } }'})
       .expect(200)
 
       // console.log(response.body.data)
-      expect(response.body.data.userHasSummary.styleSummary).toEqual('Punk, but Comfy')
+      expect(response.body.data.user.styleSummary).toEqual(null)
   })
 })
