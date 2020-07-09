@@ -49,7 +49,7 @@ export const userStyleSummaryUpdate = {
     },
     formData: {
       name: 'formData',
-      type: GraphQLList
+      type: new GraphQLList(GraphQLString)
     }
   },
   resolve: updateStyleSummary
