@@ -78,7 +78,36 @@ export async function getGenders() {
   return Object.values(params.user.gender)
 }
 
-// User Has Summary
-export async function hasSummary(parentValue, { id }) {
-  return await models.User.findOne({ where: { id } })
+// Update User styleSummary
+export async function updateStyleSummary(parentValue, { id, formData }) {
+  // assuming formData is received like { "top": "punk", "pants": "prep" ...}
+
+  // pull values from hash
+  const formValues = Object.values(formData);
+
+  // tally number of occurrences for each style into a new hash
+  const formSummary = formValues.reduce(function (acc, style) {
+    if (typeof acc[style] == 'undefined') {
+      acc[style] = 1;
+    } else {
+      acc[style] += 1;
+    }
+    return acc;
+  }, {});
+
+  // turn formSummary hash into array for sorting purposes
+  const formSummaryArr = Object.keys(formSummary).map(function (key) {
+    return [key, formSummary[key]];
+  });
+
+  // sort resulting array
+  const orderedStyles = formSummaryArr.sort(function(a, b) {
+      return b[1] - a[1]
+  });
+
+  // pull top two styles
+  const primaryStyle = orderedStyles[0][0];
+  const secondaryStyle = orderedStyles[1][0];
+
+  return `${ primaryStyle }, but ${ secondaryStyle }`
 }
