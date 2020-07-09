@@ -38,3 +38,19 @@ export const userRemove = {
   },
   resolve: remove
 }
+
+// Update Style Summary
+export const userStyleSummaryUpdate = {
+  type: UserType,
+  args: {
+    id: {
+      name: 'id',
+      type: GraphQLInt
+    },
+    formData: {
+      name: 'formData',
+      type: GraphQLList
+    }
+  },
+  resolve: updateStyleSummary
+}
