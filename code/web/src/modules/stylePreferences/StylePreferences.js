@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
 // UI Imports
-// import Button from '../../ui/button/Button'
-// import H4 from '../../ui/typography/H4'
-// import Icon from '../../ui/icon'
-// import { white, grey2, black } from '../../ui/common/colors'
+import Button from '../../ui/button/Button'
+import H4 from '../../ui/typography/H4'
+import Icon from '../../ui/icon'
+import { white, grey2, black } from '../../ui/common/colors'
 
 // App Imports
 // import { APP_URL } from '../../setup/config/env'
@@ -20,15 +20,101 @@ class StylePreferences extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false
+            tops: '',
+            pants: '',
+            dresses: '',
+            shoes: '',
+            accessories: ''
         }
     }
 
+    updateTops = (event) => {
+        console.log(event.target.id)
+        const targetEvent = event.target.id;
+        this.setState({tops: targetEvent})
+    }
+
     render() {
+    console.log(this.state)
 
     return (
         <section>
-          <h1>Made it</h1>
+            <p>Shirts</p>
+            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em'}}>
+                <button id='punk'
+                onClick={this.updateTops}
+                >
+                    Punk
+                </button>
+                <button id='preppy'
+                onClick={this.updateTops}                
+                >
+                    Preppy
+                </button>
+                <button id='comfy'
+                onClick={this.updateTops}
+                >
+                    Comfy
+                </button>
+            </div>
+            <p>Pants</p>
+            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+            <button type='punk'>
+                    Punk
+                </button>
+                <button type='preppy'>
+                    Preppy
+                </button>
+                <button type='comfy'>
+                    Comfy
+                </button>
+            </div>
+            <p>Dresses</p>
+            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+            <button type='punk'>
+                    Punk
+                </button>
+                <button type='preppy'>
+                    Preppy
+                </button>
+                <button type='comfy'>
+                    Comfy
+                </button>
+            </div>
+            <p>Shoes</p>
+            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+            <button type='punk'>
+                    Punk
+                </button>
+                <button type='preppy'>
+                    Preppy
+                </button>
+                <button type='comfy'>
+                    Comfy
+                </button>
+            </div>
+            <p>Accessories</p>
+            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+            <button type='punk'>
+                    Punk
+                </button>
+                <button type='preppy'>
+                    Preppy
+                </button>
+                <button type='comfy'>
+                    Comfy
+                </button>
+            </div>
+            <div>
+            <p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+                <Button
+                    theme="primary"
+                    type="button"
+                >
+                Submit
+                </Button>
+            </p>
+            </div>
         </section>
     )
 }
