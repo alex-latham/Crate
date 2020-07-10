@@ -8,40 +8,41 @@ export const STYLE_POST_FAILURE = 'STYLE/STYLE_POST_FAILURE'
 
 
 
-export function loadPreferencesOptions(preferencesOptions = {}) {  
-    return dispatch => {
-        dispatch({
-        type: LOAD_PREFERENCES,
-        preferencesOptions
-        })
+export function sendPreferences(stylePreferences = []) {  
+    console.log('made-it')
+    // return dispatch => {
+    //     dispatch({
+    //     type: SEND_PREFERENCES,
+    //     stylePreferences
+    //     })
 
-        return axios.post(routeApi, query({
-            operation: null,
-            fields: []
-        }))
-        .then(response => {
-            if (response.status === 200) {
-                dispatch({
-                    type: STYLE_POST_RESPONSE,
-                    error: null,
-                    preferencesOptions: {}
-        })
-        } else {
-            dispatch({
-                type: STYLE_SUBMISSION_FAILURE,
-                error: 'Some error occurred. Please try again.',
-                preferencesOptions: {}
+    //     return axios.post(routeApi, query({
+    //         operation: null,
+    //         fields: []
+    //     }))
+    //     .then(response => {
+    //         if (response.status === 200) {
+    //             dispatch({
+    //                 type: STYLE_POST_RESPONSE,
+    //                 error: null,
+    //                 stylePreferences: []
+    //     })
+    //     } else {
+    //         dispatch({
+    //             type: STYLE_SUBMISSION_FAILURE,
+    //             error: 'Some error occurred. Please try again.',
+    //             stylePreferences: []
 
-            })
-            }
-        })
-        .catch(error => {
-            dispatch({
-                type: STYLE_POST_FAILURE,
-                error: 'Some error occurred. Please try again.',
-                preferencesOptions: {}
-            })
-        })
-    }
+    //         })
+    //         }
+    //     })
+    //     .catch(error => {
+    //         dispatch({
+    //             type: STYLE_POST_FAILURE,
+    //             error: 'Some error occurred. Please try again.',
+    //             preferencesOptions: []
+    //         })
+    //     })
+    // }
 }
 

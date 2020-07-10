@@ -6,13 +6,13 @@ import {
 
 const preferencesInitialState = {
     error: null,
-    preferencesOptions: {}
+    stylePreferences: []
 }
 
 //State 
 
 export const styles = (state = preferencesInitialState, action) => {
-    switch(DefaultAppSyncMutationAdapter.type) {
+    switch(action.type) {
         case STYLE_POST_RESPONSE:
             return {
                 ...state,
