@@ -107,10 +107,13 @@ export async function updateStyleSummary(parentValue, { id, styleSurvey }) {
 
   const styleSummary = `${ primaryStyle }, but ${ secondaryStyle }`
 
-  return await models.User.update(
+  await models.User.update(
     {
       styleSummary
     },
     { where: { id }
   })
+
+  const user = await models.User.findOne({ where: { id } })
+  return user
 }
