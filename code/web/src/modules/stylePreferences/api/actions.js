@@ -17,7 +17,7 @@ export function sendPreferences(stylePreferences = []) {
     //     })
 
     //     return axios.post(routeApi, query({
-    //         operation: null,
+    //         operation: 'stylePreferences',
     //         fields: []
     //     }))
     //     .then(response => {
@@ -25,13 +25,13 @@ export function sendPreferences(stylePreferences = []) {
     //             dispatch({
     //                 type: STYLE_POST_RESPONSE,
     //                 error: null,
-    //                 stylePreferences: []
+    //                 stylePreferences: {}
     //     })
     //     } else {
     //         dispatch({
     //             type: STYLE_SUBMISSION_FAILURE,
     //             error: 'Some error occurred. Please try again.',
-    //             stylePreferences: []
+    //             stylePreferences: {}
 
     //         })
     //         }
@@ -40,7 +40,7 @@ export function sendPreferences(stylePreferences = []) {
     //         dispatch({
     //             type: STYLE_POST_FAILURE,
     //             error: 'Some error occurred. Please try again.',
-    //             preferencesOptions: []
+    //             preferencesOptions: {}
     //         })
     //     })
     // }
