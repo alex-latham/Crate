@@ -54,6 +54,7 @@ class StylePreferences extends Component {
     }
 
     submitStyle = (event) => {
+        console.log(Object.values(this.state))
         sendPreferences()
     }
 

@@ -6,7 +6,7 @@ import {
 
 const preferencesInitialState = {
     error: null,
-    stylePreferences: []
+    stylePreferences: {}
 }
 
 //State 
