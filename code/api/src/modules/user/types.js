@@ -40,37 +40,27 @@ const UserGenderType = new GraphQLObjectType({
   })
 })
 
-// Has Summary Type
-// const UserStyleSummaryType = new GraphQLObjectType({
-//   name: 'userStyleSummary',
-//   description: 'User styleSummary Type',
-//
-//   fields: () => ({
-//     styleSummary: { type: GraphQLString },
-//   })
-// })
-
 // style form data type
-const UserStyleFormDataType = new GraphQLInputObjectType({
-  name: 'styleFormData',
-  description: 'style form data',
+const StyleSurveyType = new GraphQLInputObjectType({
+  name: 'Style Survey',
+  description: 'style survey results data',
   fields: () => ({
       tops: {
-          type: GraphQLString,
+          type: new GraphQLString,
       },
       pants: {
-          type: GraphQLString,
+          type: new GraphQLString,
       },
       dresses: {
-          type: GraphQLString,
+          type: new GraphQLString,
       },
       shoes: {
-          type: GraphQLString,
+          type: new GraphQLString,
       },
       accessories: {
-          type: GraphQLString,
+          type: new GraphQLString,
       }
-  }),
+  });
 });
 
-export { UserType, UserLoginType, UserGenderType, UserStyleFormDataType }
+export { UserType, UserLoginType, UserGenderType, StyleSurveyType }
