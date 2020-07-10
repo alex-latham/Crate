@@ -10,6 +10,9 @@ import user from '../modules/user/api/state'
 import * as product from '../modules/product/api/state'
 import * as subscription from '../modules/subscription/api/state'
 import * as crate from '../modules/crate/api/state'
+import * as stylePreferences from '../modules/stylePreferences/api/state'
+
+
 
 // App Reducer
 
@@ -19,7 +22,8 @@ const appReducer = combineReducers({
   user,
   ...product,
   ...subscription,
-  ...crate
+  ...crate,
+  ...stylePreferences
 })
 
 // Root Reducer
