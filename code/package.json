@@ -25,6 +25,7 @@
   "homepage": "https://github.com/atulmy/crate#readme",
   "dependencies": {},
   "devDependencies": {
+    "@testing-library/dom": "^7.20.0",
     "concurrently": "^4.1.0"
   }
 }
