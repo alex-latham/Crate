@@ -105,5 +105,12 @@ export async function updateStyleSummary(parentValue, { id, styleSurvey }) {
   const primaryStyle = orderedStyles[0][0];
   const secondaryStyle = orderedStyles[1][0];
 
-  return `${ primaryStyle }, but ${ secondaryStyle }`
+  const styleSummary = `${ primaryStyle }, but ${ secondaryStyle }`
+
+  return await models.User.update(
+    {
+      styleSummary
+    },
+    { where: { id }
+  })
 }
