@@ -47,15 +47,3 @@ export const userGenders = {
   type: new GraphQLList(UserGenderType),
   resolve: getGenders
 }
-
-// HasStyleSummary
-// export const userStyleSummary = {
-//   type: UserStyleSummaryType,
-//   args: {
-//     id: {
-//       name: 'id',
-//       type: GraphQLInt
-//     }
-//   },
-//   resolve: getStyleSummary
-// }
