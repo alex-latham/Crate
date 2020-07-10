@@ -49,7 +49,7 @@ export const userStyleSummaryUpdate = {
     },
     styleSurvey: {
       name: 'styleSurveyType',
-      type: StyleSurveyType
+      type: new GraphQLList(GraphQLString)
     }
   },
   resolve: updateStyleSummary
