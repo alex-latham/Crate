@@ -45,20 +45,20 @@ const StyleSurveyType = new GraphQLInputObjectType({
   name: 'Style Survey',
   description: 'style survey results data',
   fields: () => ({
-      tops: {
-          type: new GraphQLString,
+    tops: {
+      type: new GraphQLString,
       },
       pants: {
-          type: new GraphQLString,
+        type: new GraphQLString,
       },
       dresses: {
-          type: new GraphQLString,
+        type: new GraphQLString,
       },
       shoes: {
-          type: new GraphQLString,
+        type: new GraphQLString,
       },
       accessories: {
-          type: new GraphQLString,
+        type: new GraphQLString,
       }
   });
 });
