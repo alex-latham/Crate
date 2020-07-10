@@ -12,7 +12,7 @@ import { white, grey2, black } from '../../ui/common/colors'
 // App Imports
 // import { APP_URL } from '../../setup/config/env'
 // import { messageShow, messageHide } from '../common/api/actions'
-// import { remove, getListByUser } from '../subscription/api/actions'
+import { sendPreferences } from '../stylePreferences/api/actions'
 
 // Component
 class StylePreferences extends Component {
@@ -53,9 +53,11 @@ class StylePreferences extends Component {
         this.setState({accessories: targetEvent})
     }
 
-    render() {
-    console.log(this.state)
+    submitStyle = (event) => {
+        sendPreferences()
+    }
 
+    render() {
     return (
         <section>
             <p>Tops</p>
@@ -153,6 +155,7 @@ class StylePreferences extends Component {
                 <Button
                     theme="primary"
                     type="button"
+                    onClick={this.submitStyle}
                 >
                 Submit
                 </Button>
@@ -164,22 +167,15 @@ class StylePreferences extends Component {
 }
 
 // Component Properties
-// Item.propTypes = {
-//   subscription: PropTypes.object.isRequired,
-//   user: PropTypes.object.isRequired,
-//   remove: PropTypes.func.isRequired,
-//   getListByUser: PropTypes.func.isRequired,
-//   messageShow: PropTypes.func.isRequired,
-//   messageHide: PropTypes.func.isRequired
+// StylePreferences.propTypes = {
+ 
 // }
 
 // Component State
-// function mapStateToProps(state) {
-//   return {
-//     stylePreferences: state.stylePreferences
-//   }
-// }
+function stylePreferencesState(state) {
+    return {
+        stylePreferences: state.stylePreferences
+    }
+}
 
-// export default connect(mapStateToProps, mapDispatchToProps)(withRouter(StylePreferences))
-
-export default StylePreferences;
+export default connect(stylePreferencesState, { sendPreferences })(withRouter(StylePreferences))
