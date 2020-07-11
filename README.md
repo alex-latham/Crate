@@ -118,7 +118,19 @@ Click on image to view fullscreen and zoom
 - Production
   - Run API `cd api` and `npm run start:prod`, creates an optimized build in `build` directory and runs the server
   - Run Webapp `cd web` and `npm run start:prod`, creates an optimized build in `build` directory and runs the server
-
+- Test
+  - Create database:
+    ```
+    psql
+    CREATE DATABASE crate_test;
+    exit
+    ```
+  - Migrate database:
+    ```
+    cd code/api
+    NODE_ENV=test npm run db:migrate
+    ```
+  - Run tests: `npm test` and then `a` to run all tests
 ## Multi-package automation
 - New developers are advised to run through the above 'setup and running' process before reading further.
 - Optional multi-package automation for faster setup and easier dev environment initiation.
