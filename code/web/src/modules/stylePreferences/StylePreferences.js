@@ -5,9 +5,9 @@ import { withRouter } from 'react-router-dom'
 
 // UI Imports
 import Button from '../../ui/button/Button'
-// import H4 from '../../ui/typography/H4'
-// import Icon from '../../ui/icon'
-// import { white, grey2, black } from '../../ui/common/colors'
+import H3 from '../../ui/typography/H3'
+import Icon from '../../ui/icon'
+import { white, grey2, black } from '../../ui/common/colors'
 
 // App Imports
 // import { APP_URL } from '../../setup/config/env'
@@ -64,95 +64,141 @@ class StylePreferences extends Component {
         
     return (
         <section>
-            <p>Tops</p>
+            <H3 style={{ textAlign: 'center' }}>What is your style?</H3>
+            <h2 style={{font:'primary'}}>Tops</h2>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em'}}>
-                <button id='punk'
+                <Button 
+                style={{ margin: '3em'}}
+                id='punk'
+                theme="primary"
                 onClick={this.updateTops}
                 >
                     Punk
-                </button>
-                <button id='preppy'
+                </Button>
+                <Button 
+                id='preppy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateTops}                
                 >
                     Preppy
-                </button>
-                <button id='comfy'
+                </Button>
+                <Button 
+                id='comfy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateTops}
                 >
                     Comfy
-                </button>
+                </Button>
             </div>
-            <p>Bottoms</p>
+            <h2 style={{font:'primary'}}>Bottoms</h2>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-                <button id='punk'
+                <Button 
+                id='punk'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updatePants}
                 >
                     Punk
-                </button>
-                <button id='preppy'
+                </Button>
+                <Button 
+                id='preppy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updatePants}                
                 >
                     Preppy
-                </button>
-                <button id='comfy'
+                </Button>
+                <Button 
+                id='comfy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updatePants}
                 >
                     Comfy
-                </button>
+                </Button>
             </div>
-            <p>Dresses</p>
+            <h2 style={{font:'primary'}}>Dresses</h2>            
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-                <button id='punk'
+                <Button 
+                id='punk'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateDresses}
                 >
                     Punk
-                </button>
-                <button id='preppy'
+                </Button>
+                <Button 
+                id='preppy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateDresses}                
                 >
                     Preppy
-                </button>
-                <button id='comfy'
+                </Button>
+                <Button 
+                id='comfy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateDresses}
                 >
                     Comfy
-                </button>
+                </Button>
             </div>
-            <p>Shoes</p>
+            <h2 style={{font:'primary'}}>Shoes</h2>            
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-                <button id='punk'
+                <Button 
+                id='punk'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateShoes}
                 >
                     Punk
-                </button>
-                <button id='preppy'
+                </Button>
+                <Button 
+                id='preppy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateShoes}                
                 >
                     Preppy
-                </button>
-                <button id='comfy'
+                </Button>
+                <Button 
+                id='comfy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateShoes}
                 >
                     Comfy
-                </button>
+                </Button>
             </div>
-            <p>Accessories</p>
+            <h2 style={{font:'primary'}}>Accessories</h2>            
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-                <button id='punk'
+                <Button 
+                id='punk'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateAccessories}
                 >
                     Punk
-                </button>
-                <button id='preppy'
+                </Button>
+                <Button 
+                id='preppy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateAccessories}                
                 >
                     Preppy
-                </button>
-                <button id='comfy'
+                </Button>
+                <Button 
+                id='comfy'
+                style={{ margin: '3em'}}
+                theme="primary"
                 onClick={this.updateTAccessories}
                 >
                     Comfy
-                </button>
+                </Button>
             </div>
             <div>
             <p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
