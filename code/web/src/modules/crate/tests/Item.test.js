@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../Item";
+import { Item } from "../Item";
 import { MemoryRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/";
@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 describe("Item", () => {
 
   it('Should', () => {
-    const crate = {
+    const crates = {
       createdAt: "1593470789289",
       description: "A monthly supply of trendy clothes and accessories for women",
       id: 6,
@@ -16,7 +16,7 @@ describe("Item", () => {
       updatedAt: "1593470789289",
     }
 
-    const user = { 
+    const users = { 
       details: {
       email: "user@crate.com",
       name: "The User",
@@ -32,15 +32,14 @@ describe("Item", () => {
 
     const { getByAltText } = render(
       <Provider>
-          
+        <MemoryRouter>
           <Item
-            key={Math.floor(Math.random() * 10000000) + 1} 
-            crate={crate} 
-            user={user} 
+            crate={crates} 
+            user={users} 
             messageShow={message1} 
-            messageHide={message2}/>        
-          </Provider>
-
+            messageHide={message2}/> 
+        </MemoryRouter>
+        </Provider>       
       )
   
       const altText = getByAltText("Clothes and Accessories for Women")
