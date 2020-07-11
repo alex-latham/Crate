@@ -15,9 +15,8 @@ export function sendPreferences(stylePreferences = []) {
         type: SEND_PREFERENCES,
         stylePreferences
         })
-
         return axios.post(routeApi, query({
-            operation: 'stylePreferences',
+            operation: 'styleSummary',
             fields: ['shoes', 'tops', 'pants', 'dresses', 'accessories']
         }))
         .then(response => {
