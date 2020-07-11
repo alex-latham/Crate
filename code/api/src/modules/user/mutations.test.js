@@ -20,7 +20,7 @@ describe("user mutations", () => {
   });
 
   beforeEach(async() => {
-    const user_data = {
+    const userData1 = {
       id: 1,
       name: "testUser",
       email: "test@example.com",
@@ -30,7 +30,7 @@ describe("user mutations", () => {
       updatedAt: new Date()
     };
 
-    await models.User.create(user_data);
+    await models.User.create(userData1);
   })
 
   afterEach(async() => {
@@ -41,7 +41,7 @@ describe("user mutations", () => {
     db.close()
   })
 
-  it ("can update a user's style summary from a style survey", async() => {
+  it ("can update a user's style summary from a style survey multiple times", async() => {
     const data = {
       query: `mutation {
         userStyleSummaryUpdate(

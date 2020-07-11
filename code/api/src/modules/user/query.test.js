@@ -20,10 +20,10 @@ describe("user queries", () => {
   });
 
   beforeEach(async() => {
-    const user_data = {
+    const userData1 = {
       id: 1,
-      name: "testUser",
-      email: "test@example.com",
+      name: "testUser1",
+      email: "test1@example.com",
       password: bcrypt.hashSync('abc123', 10),
       role: "USER",
       createdAt: new Date(),
@@ -31,7 +31,19 @@ describe("user queries", () => {
       styleSummary: "comfy, but punk"
     };
 
-    await models.User.create(user_data);
+    const userData2 = {
+      id: 2,
+      name: "testUser2",
+      email: "test2@example.com",
+      password: bcrypt.hashSync('123abc', 10),
+      role: "USER",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      styleSummary: "punk, but comfy"
+    };
+
+    await models.User.create(userData1);
+    await models.User.create(userData2);
   })
 
   afterEach(async() => {
@@ -48,7 +60,7 @@ describe("user queries", () => {
       .send({ query: '{users { name email password } }'})
       .expect(200)
 
-    expect(response.body.data.users.length).toEqual(1)
+    expect(response.body.data.users.length).toEqual(2)
   })
 
   it ("return a user with a specific id", async() => {
@@ -57,17 +69,16 @@ describe("user queries", () => {
       .send({ query: '{user(id: 1) { name email role } }'})
       .expect(200)
 
-    expect(response.body.data.user.name).toEqual("testUser")
+    expect(response.body.data.user.name).toEqual("testUser1")
   })
 
   it ("authorizes a valid user", async() => {
     const response = await request(server)
       .get('/')
-      .send({ query: '{ userLogin(email: "test@example.com", password: "abc123") { user { id name role email } } }'})
+      .send({ query: '{ userLogin(email: "test1@example.com", password: "abc123") { user { id name role email } } }'})
       .expect(200)
 
-      // console.log(response.body.data)
-      expect(response.body.data.userLogin.user.name).toEqual("testUser")
+      expect(response.body.data.userLogin.user.name).toEqual("testUser1")
   })
 
   it ("gets user genders", async() => {
@@ -76,7 +87,6 @@ describe("user queries", () => {
       .send({ query: '{ userGenders { id name } }'})
       .expect(200)
 
-      // console.log(response.body.data)
       expect(response.body.data.userGenders[0].name).toEqual('Male')
       expect(response.body.data.userGenders[1].name).toEqual('Female')
   })
