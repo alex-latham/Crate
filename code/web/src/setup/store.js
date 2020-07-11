@@ -11,7 +11,7 @@ import * as product from '../modules/product/api/state'
 import * as subscription from '../modules/subscription/api/state'
 import * as crate from '../modules/crate/api/state'
 import * as stylePreferences from '../modules/stylePreferences/api/state'
-import * as PopUp from '../modules/popUp/api/state'
+import * as popUp from '../modules/popUp/api/state'
 
 
 
