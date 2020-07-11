@@ -4,7 +4,7 @@ import {
 
 const styleDescriptionState = {
   error: null,
-  receivedStyle = '',
+  receivedStyle: '',
   
 }
 
@@ -15,16 +15,6 @@ export const styleDescription = (state = styleDescriptionState, action) => {
               ...state,
               error: null
           }
-          case STYLE_SUBMISSION_FAILURE:
-              return {
-                  ...state,
-                  error: null
-              }
-              case STYLE_POST_FAILURE:
-                  return {
-                      ...state,
-                      error: null
-                  }
       default: 
           return state          
   }
