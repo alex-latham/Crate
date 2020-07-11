@@ -66,7 +66,6 @@ class Item extends PureComponent {
   render() {
     const { id, name, description } = this.props.crate
     const { isLoading } = this.state
-    console.log(this.props)
 
     return (
       <Card style={{ width: '18em', backgroundColor: white }}>

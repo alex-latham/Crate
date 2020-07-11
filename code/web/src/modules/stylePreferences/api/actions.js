@@ -6,30 +6,33 @@ export const STYLE_POST_RESPONSE = 'STYLE/STYLE_POST_RESPONSE'
 export const STYLE_SUBMISSION_FAILURE = 'STYLES/STYLE_SUBMISSION_FAILURE'
 export const STYLE_POST_FAILURE = 'STYLE/STYLE_POST_FAILURE'
 
-export function sendPreferences(stylePreferences = []) {  
-    console.log('made-it')
-    // return dispatch => {
-    //     dispatch({
-    //     type: SEND_PREFERENCES,
-    //     stylePreferences
-    //     })
-
-    //     return axios.post(routeApi, query({
-    //         operation: 'stylePreferences',
-    //         fields: []
-    //     }))
-    //     .then(response => {
-    //         if (response.status === 200) {
-    //             dispatch({
-    //                 type: STYLE_POST_RESPONSE,
-    //                 error: null,
-    //                 stylePreferences: {}
-    //     })
+export function sendPreferences(stylePreferences) { 
+        console.log(stylePreferences) 
+    return dispatch => {
+        return axios.post(routeApi, query({
+            operation: 'StyleSurveyType',
+            variables: stylePreferences,
+            fields: ['shoes', 'tops', 'pants', 'dresses', 'accessories']
+        }))
+        .then(response => {
+            console.log(response)
+            // if (response.status === 200) {
+        //         dispatch({
+        //             type: STYLE_POST_RESPONSE,
+        //             error: null,
+        //             stylePreferences: stylePreferences
+        // })
+    })
+        // dispatch({
+        //     type: 'StyleSurveyType',
+        //     stylePreferences: stylePreferences
+        //     })
     //     } else {
+    //         console.log(response)
     //         dispatch({
     //             type: STYLE_SUBMISSION_FAILURE,
     //             error: 'Some error occurred. Please try again.',
-    //             stylePreferences: {}
+    //             stylePreferences: []
 
     //         })
     //         }
@@ -38,9 +41,9 @@ export function sendPreferences(stylePreferences = []) {
     //         dispatch({
     //             type: STYLE_POST_FAILURE,
     //             error: 'Some error occurred. Please try again.',
-    //             preferencesOptions: {}
+    //             stylePreferences: []
     //         })
     //     })
-    // }
+    }
 }
 

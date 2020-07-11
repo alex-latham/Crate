@@ -6,7 +6,7 @@ import {
 
 const preferencesInitialState = {
     error: null,
-    stylePreferences: {}
+    stylePreferences: []
 }
 
 //State 
@@ -32,5 +32,4 @@ export const styles = (state = preferencesInitialState, action) => {
         default: 
             return state          
     }
-
 }

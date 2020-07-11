@@ -5,14 +5,14 @@ import { withRouter } from 'react-router-dom'
 
 // UI Imports
 import Button from '../../ui/button/Button'
-import H4 from '../../ui/typography/H4'
-import Icon from '../../ui/icon'
-import { white, grey2, black } from '../../ui/common/colors'
+// import H4 from '../../ui/typography/H4'
+// import Icon from '../../ui/icon'
+// import { white, grey2, black } from '../../ui/common/colors'
 
 // App Imports
 // import { APP_URL } from '../../setup/config/env'
 // import { messageShow, messageHide } from '../common/api/actions'
-import { sendPreferences } from '../stylePreferences/api/actions'
+import { sendPreferences } from './api/actions'
 
 // Component
 class StylePreferences extends Component {
@@ -24,7 +24,8 @@ class StylePreferences extends Component {
             pants: '',
             dresses: '',
             shoes: '',
-            accessories: ''
+            accessories: '',
+            styleSummary: []
         }
     }
 
@@ -53,12 +54,14 @@ class StylePreferences extends Component {
         this.setState({accessories: targetEvent})
     }
 
-    submitStyle = (event) => {
-        console.log(Object.values(this.state))
-        sendPreferences()
+    submitStyle = async (event) => {
+        const postArray = Object.values(this.state) 
+        console.log(postArray)
+        await sendPreferences(postArray)
     }
 
     render() {
+        
     return (
         <section>
             <p>Tops</p>
