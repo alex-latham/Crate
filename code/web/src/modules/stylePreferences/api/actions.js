@@ -6,8 +6,6 @@ export const STYLE_POST_RESPONSE = 'STYLE/STYLE_POST_RESPONSE'
 export const STYLE_SUBMISSION_FAILURE = 'STYLES/STYLE_SUBMISSION_FAILURE'
 export const STYLE_POST_FAILURE = 'STYLE/STYLE_POST_FAILURE'
 
-
-
 export function sendPreferences(stylePreferences = []) {  
     console.log('made-it')
     // return dispatch => {
