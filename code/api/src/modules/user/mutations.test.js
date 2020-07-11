@@ -23,7 +23,7 @@ describe("user mutations", () => {
   beforeEach(async() => {
     const userData1 = {
       id: 1,
-      name: "testUser",
+      name: "testUser1",
       email: "test@example.com",
       password: bcrypt.hashSync('abc123', 10),
       role: "USER",
@@ -53,12 +53,12 @@ describe("user mutations", () => {
       }`
     }
 
-    var response = await request(server)
+    const response1 = await request(server)
       .post('/')
       .send(data)
       .expect(200)
 
-    expect(response.body.data.userStyleSummaryUpdate.styleSummary).toEqual("comfy, but punk")
+    expect(response1.body.data.userStyleSummaryUpdate.styleSummary).toEqual("comfy, but punk")
 
     const new_data = {
       query: `mutation {
@@ -70,12 +70,12 @@ describe("user mutations", () => {
       }`
     }
 
-    response = await request(server)
+    const response2 = await request(server)
       .post('/')
       .send(new_data)
       .expect(200)
 
-    expect(response.body.data.userStyleSummaryUpdate.styleSummary).toEqual("prep, but comfy")
+    expect(response2.body.data.userStyleSummaryUpdate.styleSummary).toEqual("prep, but comfy")
   })
 
   // it ("can update a user's style summary if there is only one style selected [edge case]", async() => {
