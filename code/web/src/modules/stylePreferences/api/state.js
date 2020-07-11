@@ -32,4 +32,5 @@ export const styles = (state = preferencesInitialState, action) => {
         default: 
             return state          
     }
+
 }
