@@ -130,6 +130,7 @@ Click on image to view fullscreen and zoom
     cd code/api
     NODE_ENV=test npm run db:migrate
     ```
+  - Run tests: `npm test` and then `a` to run all tests
 ## Multi-package automation
 - New developers are advised to run through the above 'setup and running' process before reading further.
 - Optional multi-package automation for faster setup and easier dev environment initiation.
