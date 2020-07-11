@@ -12,13 +12,16 @@
     "build:client:prod": "webpack -p",
     "build:server:prod": "babel src -s -D -d build",
     "start:server:prod": " node build/index.js",
-    "storybook": "start-storybook -p 9000 -c storybook"
+    "storybook": "start-storybook -p 9000 -c storybook",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "7.9.0",
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.9.0",
     "@babel/node": "7.8.7",
     "@babel/plugin-proposal-class-properties": "7.8.3",
     "@babel/plugin-transform-runtime": "7.9.0",
@@ -26,9 +29,14 @@
     "@babel/preset-react": "7.9.4",
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
+    "@testing-library/dom": "^7.20.0",
+    "@testing-library/jest-dom": "^5.11.0",
+    "@testing-library/react": "^10.4.5",
     "babel-loader": "8.1.0",
     "dotenv-webpack": "^1.7.0",
+    "jest": "^26.1.0",
     "nodemon": "2.0.3",
+    "redux-devtools-extension": "^2.13.8",
     "webpack": "4.42.1",
     "webpack-cli": "3.3.11"
   },

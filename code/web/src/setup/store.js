@@ -2,6 +2,7 @@
 import { compose, combineReducers } from 'redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 // App Imports
 import common from '../modules/common/api/state'
@@ -9,14 +10,22 @@ import user from '../modules/user/api/state'
 import * as product from '../modules/product/api/state'
 import * as subscription from '../modules/subscription/api/state'
 import * as crate from '../modules/crate/api/state'
+import * as stylePreferences from '../modules/stylePreferences/api/state'
+import * as popUp from '../modules/popUp/api/state'
+
+
 
 // App Reducer
+
+/// if we have to make any changes to the reducers it may have to be in the user reducer and or the product file as well.
 const appReducer = combineReducers({
   common,
   user,
   ...product,
   ...subscription,
-  ...crate
+  ...crate,
+  ...stylePreferences,
+  popUp,
 })
 
 // Root Reducer
@@ -41,6 +50,6 @@ export const store = createStore(
   initialState,
 
   compose(
-    applyMiddleware(thunk),
+    composeWithDevTools(applyMiddleware(thunk)),
   )
 )

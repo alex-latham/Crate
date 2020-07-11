@@ -12,6 +12,9 @@ import {
 
 // Crates list
 
+//import new action 
+//Will need to add a reducer that will handle managing the state of the style prefrences
+
 // Initial State
 const cratesInitialState = {
   isLoading: false,
