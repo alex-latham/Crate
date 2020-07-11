@@ -9,7 +9,7 @@ import db from '../../setup/database';
 describe("user mutations", () => {
   let server = express();
 
-  beforeAll(() => {
+  beforeAll(async() => {
     server.use(
       '/',
       graphqlHTTP({
@@ -17,6 +17,7 @@ describe("user mutations", () => {
         graphiql: false
       })
     );
+    await models.User.destroy({ where: {}})
   });
 
   beforeEach(async() => {
