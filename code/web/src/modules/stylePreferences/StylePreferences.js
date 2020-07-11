@@ -24,7 +24,8 @@ class StylePreferences extends Component {
             pants: '',
             dresses: '',
             shoes: '',
-            accessories: ''
+            accessories: '',
+            styleSummary: []
         }
     }
 
@@ -54,8 +55,8 @@ class StylePreferences extends Component {
     }
 
     submitStyle = (event) => {
-        console.log(Object.values(this.state))
-        sendPreferences()
+        this.setState({styleSummary: [this.state.shoes, this.state.pants, this.state.dresses, this.state.accessories, this.state.tops]})
+        sendPreferences(this.state.styleSummary)
     }
 
     render() {
