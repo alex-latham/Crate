@@ -81,7 +81,6 @@ export async function getGenders() {
 // Update User styleSummary
 export async function updateStyleSummary(parentValue, { id, styleSurvey }) {
   // tally number of occurrences for each style into a new hash
-  console.log(styleSurvey);
   const formSummary = styleSurvey.reduce(function (acc, style) {
     if (typeof acc[style] == 'undefined') {
       acc[style] = 1;
