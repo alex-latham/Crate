@@ -76,6 +76,24 @@ describe("user mutations", () => {
       .expect(200)
 
     expect(response.body.data.userStyleSummaryUpdate.styleSummary).toEqual("prep, but comfy")
-
   })
+
+  // it ("can update a user's style summary if there is only one style selected [edge case]", async() => {
+  //   const data = {
+  //     query: `mutation {
+  //       userStyleSummaryUpdate(
+  //         id: 1,
+  //         styleSurvey: ["comfy", "comfy", "comfy", "comfy", "comfy"]
+  //       )
+  //       { styleSummary }
+  //     }`
+  //   }
+  //
+  //   var response = await request(server)
+  //     .post('/')
+  //     .send(data)
+  //     .expect(200)
+  //
+  //   expect(response.body.data.userStyleSummaryUpdate.styleSummary).toEqual("comfy")
+  // })
 })
