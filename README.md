@@ -3,7 +3,7 @@
 # Crate 👕👖📦
 
 #### Get monthly subscription of trendy clothes and accessories.
-- **API** built with Node, GraphQL, Express, Sequelize (MySQL) and JWT Auth
+- **API** built with Node, GraphQL, Express, Sequelize (PostgreSQL) and JWT Auth
 - **WebApp** built with React and Redux along with Server Side Rendering (SSR) / SEO friendly
 - **Mobile** (Android and iOS) Native App build with React Native
 - Written in ES6+ using Babel + Webpack
@@ -21,7 +21,7 @@
 - File upload feature with GraphQL
 - React storybook demonstrating UI components for web
 - Server side rendering
-- Multi-package setup and dev scripts for an automated dev experiance
+- Multi-package setup and dev scripts for an automated dev experience
 
 
 ## Useful for
@@ -97,18 +97,26 @@ Click on image to view fullscreen and zoom
 ## Setup and Running
 - Prerequisites
   - Node
-  - MySQL (or Postgres / Sqlite / MSSQL)
+  - PostgreSQL
 - Clone repo `git clone git@github.com:atulmy/crate.git crate`
 - Switch to `code` directory `cd code`
 - Configurations
-  - Modify `/api/src/config/database.json` for database credentials
+  - Modify `/api/src/config/database.json` for database credentials (currently set to default PostgreSQL credentials )
   - Modify `/api/.env` for PORT (optional)
   - Modify `/web/.env` for PORT / API URL (optional)
   - Modify `/mobile/src/setup/config.json` for API URL (tip: use `ifconfig` to get your local IP address)
 - Setup
-  - API: Install packages and database setup (migrations and seed) `cd api` and `npm run setup`
+  - API:
+    1. Create PostgreSQL development and test databases:
+      ```
+      psql
+      CREATE DATABASE crate;
+      CREATE DATABASE crate_test;
+      exit
+      ```
+    2. Install packages and database setup (migrations and seed) `cd api` and `npm run setup`
   - Webapp: Install packages `cd web` and `npm install`
-  - Mobile: 
+  - Mobile:
     1. Install packages `cd mobile` and `npm install`
     2. Install iOS dependencies `cd mobile/ios` `pod install`
 - Development
@@ -119,18 +127,12 @@ Click on image to view fullscreen and zoom
   - Run API `cd api` and `npm run start:prod`, creates an optimized build in `build` directory and runs the server
   - Run Webapp `cd web` and `npm run start:prod`, creates an optimized build in `build` directory and runs the server
 - Test
-  - Create database:
-    ```
-    psql
-    CREATE DATABASE crate_test;
-    exit
-    ```
-  - Migrate database:
+  1. Migrate database:
     ```
     cd code/api
     NODE_ENV=test npm run db:migrate
     ```
-  - Run tests: `npm test` and then `a` to run all tests
+  2. Run tests: `npm test`
 ## Multi-package automation
 - New developers are advised to run through the above 'setup and running' process before reading further.
 - Optional multi-package automation for faster setup and easier dev environment initiation.
