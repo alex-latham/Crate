@@ -62,7 +62,8 @@ class StylePreferences extends Component {
     render() {
     return (
         <section>
-            <H3 style={{font:'primary'}}>Tops</H3>
+            <H3 style={{ textAlign: 'center' }}>What is your style?</H3>
+            <h2 style={{font:'primary'}}>Tops</h2>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em'}}>
                 <Button 
                 style={{ margin: '3em'}}
@@ -89,7 +90,7 @@ class StylePreferences extends Component {
                     Comfy
                 </Button>
             </div>
-            <H3 style={{font:'primary'}}>Bottoms</H3>
+            <h2 style={{font:'primary'}}>Bottoms</h2>
             <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
                 <Button 
                 id='punk'
@@ -116,7 +117,8 @@ class StylePreferences extends Component {
                     Comfy
                 </Button>
             </div>
-            <H3 style={{font:'primary'}}>Dresses</H3>            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+            <h2 style={{font:'primary'}}>Dresses</h2>            
+            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
                 <Button 
                 id='punk'
                 style={{ margin: '3em'}}
@@ -142,7 +144,8 @@ class StylePreferences extends Component {
                     Comfy
                 </Button>
             </div>
-            <H3 style={{font:'primary'}}>Shoes</H3>            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+            <h2 style={{font:'primary'}}>Shoes</h2>            
+            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
                 <Button 
                 id='punk'
                 style={{ margin: '3em'}}
@@ -168,7 +171,8 @@ class StylePreferences extends Component {
                     Comfy
                 </Button>
             </div>
-            <H3 style={{font:'primary'}}>Accessories</H3>            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
+            <h2 style={{font:'primary'}}>Accessories</h2>            
+            <div style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
                 <Button 
                 id='punk'
                 style={{ margin: '3em'}}
