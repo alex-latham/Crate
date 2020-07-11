@@ -80,8 +80,25 @@ export async function getGenders() {
 
 // Update User styleSummary
 export async function updateStyleSummary(parentValue, { id, styleSurvey }) {
-  // tally number of occurrences for each style into a new hash
-  const formSummary = styleSurvey.reduce(function (acc, style) {
+  var talliedStyles = tallyStyles(styleSurvey);
+  var orderedStyles = orderStyles(talliedStyles);
+  var styleSummary = generateStyleSummary(orderedStyles);
+  var user = await models.User.findOne({ where: { id } })
+  await user.update(
+    { styleSummary },
+    { where: { id }
+  })
+  return user
+}
+
+/*
+*-------------------*
+| private functions |
+*-------------------*
+*/
+
+function tallyStyles(styleSurvey) {
+  const talliedStyles = styleSurvey.reduce(function (acc, style) {
     if (typeof acc[style] == 'undefined') {
       acc[style] = 1;
     } else {
@@ -89,30 +106,27 @@ export async function updateStyleSummary(parentValue, { id, styleSurvey }) {
     }
     return acc;
   }, {});
+  return talliedStyles
+}
 
-  // turn formSummary hash into array for sorting purposes
-  const formSummaryArr = Object.keys(formSummary).map(function (key) {
-    return [key, formSummary[key]];
+function orderStyles(inputHash) {
+  var resultHash = {};
+  var keys = Object.keys(inputHash);
+  keys.sort(function(a, b) {
+    return inputHash[a] - inputHash[b]
+  }).reverse().forEach(function(k) {
+    resultHash[k] = inputHash[k];
   });
+  const outputArray = Object.keys(resultHash)
+  return outputArray;
+}
 
-  // sort resulting array
-  const orderedStyles = formSummaryArr.sort(function(a, b) {
-      return b[1] - a[1]
-  });
-
-  // pull top two styles
-  const primaryStyle = orderedStyles[0][0];
-  const secondaryStyle = orderedStyles[1][0];
-
-  const styleSummary = `${ primaryStyle }, but ${ secondaryStyle }`
-
-  await models.User.update(
-    {
-      styleSummary
-    },
-    { where: { id }
-  })
-
-  const user = await models.User.findOne({ where: { id } })
-  return user
+function generateStyleSummary(orderedStyles) {
+  let styleSummary;
+  if (orderedStyles[1] == undefined) {
+    styleSummary = orderedStyles[0];
+  } else {
+    styleSummary = `${ orderedStyles[0] }, but ${ orderedStyles[1] }`
+  }
+  return styleSummary;
 }
