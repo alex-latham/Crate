@@ -58,7 +58,6 @@ describe("user queries", () => {
       expect(response.body.data.userGenders[1].name).toEqual('Female')
   })
 
-// realized this query repeated an existing one for user
   it ("gets style summary for a user", async() => {
     const response = await request(server)
       .get('/')
