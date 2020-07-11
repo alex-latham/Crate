@@ -1,9 +1,9 @@
 // Imports
-import { GraphQLString, GraphQLInt } from 'graphql'
+import { GraphQLString, GraphQLInt, GraphQLList } from 'graphql'
 
 // App Imports
-import { UserType } from './types'
-import { create, remove } from './resolvers'
+import { UserType, StyleSurveyType } from './types'
+import { create, remove, updateStyleSummary } from './resolvers'
 
 // Create
 export const userSignup = {
@@ -37,4 +37,20 @@ export const userRemove = {
     }
   },
   resolve: remove
+}
+
+// Update Style Summary
+export const userStyleSummaryUpdate = {
+  type: UserType,
+  args: {
+    id: {
+      name: 'id',
+      type: GraphQLInt
+    },
+    styleSurvey: {
+      name: 'styleSurveyType',
+      type: new GraphQLList(GraphQLString)
+    }
+  },
+  resolve: updateStyleSummary
 }

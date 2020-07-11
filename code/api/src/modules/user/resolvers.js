@@ -77,3 +77,42 @@ export async function remove(parentValue, { id }) {
 export async function getGenders() {
   return Object.values(params.user.gender)
 }
+
+// Update User styleSummary
+export async function updateStyleSummary(parentValue, { id, styleSurvey }) {
+  // tally number of occurrences for each style into a new hash
+  const formSummary = styleSurvey.reduce(function (acc, style) {
+    if (typeof acc[style] == 'undefined') {
+      acc[style] = 1;
+    } else {
+      acc[style] += 1;
+    }
+    return acc;
+  }, {});
+
+  // turn formSummary hash into array for sorting purposes
+  const formSummaryArr = Object.keys(formSummary).map(function (key) {
+    return [key, formSummary[key]];
+  });
+
+  // sort resulting array
+  const orderedStyles = formSummaryArr.sort(function(a, b) {
+      return b[1] - a[1]
+  });
+
+  // pull top two styles
+  const primaryStyle = orderedStyles[0][0];
+  const secondaryStyle = orderedStyles[1][0];
+
+  const styleSummary = `${ primaryStyle }, but ${ secondaryStyle }`
+
+  await models.User.update(
+    {
+      styleSummary
+    },
+    { where: { id }
+  })
+
+  const user = await models.User.findOne({ where: { id } })
+  return user
+}

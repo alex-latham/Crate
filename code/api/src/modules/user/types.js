@@ -1,5 +1,5 @@
 // Imports
-import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
+import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLInputObjectType, GraphQLNonNull } from 'graphql'
 
 // User type
 const UserType = new GraphQLObjectType({
@@ -40,4 +40,27 @@ const UserGenderType = new GraphQLObjectType({
   })
 })
 
-export { UserType, UserLoginType, UserGenderType }
+// Style Survey Type
+const StyleSurveyType = new GraphQLInputObjectType({
+  name: 'styleSurveyType',
+  description: 'style survey results data type',
+  fields: () => ({
+    tops: {
+      type: new GraphQLNonNull(GraphQLString)
+    },
+    pants: {
+      type: new GraphQLNonNull(GraphQLString)
+    },
+    dresses: {
+      type: new GraphQLNonNull(GraphQLString)
+    },
+    shoes: {
+      type: new GraphQLNonNull(GraphQLString)
+    },
+    accessories: {
+      type: new GraphQLNonNull(GraphQLString)
+    }
+  })
+});
+
+export { UserType, UserLoginType, UserGenderType, StyleSurveyType }
